@@ -18,7 +18,7 @@ değilse başarısız olarak rapor edilmelidir.
 
 ## Test Çıktısı
 
-HATALI POST İLE SONUÇ  <br />
+HATALI POST DATASI İLE SONUÇ  <br />
 ```
 Response POST Body is =>  {"code":500,"type":"unknown","message":"something bad happened"}
 Response POST Status Code =>  500
