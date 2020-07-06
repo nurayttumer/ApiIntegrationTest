@@ -18,10 +18,10 @@ public class IntegrationTest {
         Response response = httpRequest.request(Method.GET);
 
         String responseBody = response.getBody().asString();
-        System.out.println("Response Body is =>  " + responseBody);
+        System.out.println("Response GET Body is =>  " + responseBody);
 
         Integer statusCode=response.getStatusCode();
-        System.out.println("Response Status Code =>  " +statusCode);
+        System.out.println("Response GET Status Code =>  " +statusCode);
 
         Assert.assertEquals(200, (int) statusCode);
 
@@ -66,10 +66,10 @@ public class IntegrationTest {
         }
 
         String responseBody = response.getBody().asString();
-        System.out.println("Response Body is =>  " + responseBody);
+        System.out.println("Response POST Body is =>  " + responseBody);
 
         Integer statusCode=response.getStatusCode();
-        System.out.println("Response Status Code =>  " +statusCode);
+        System.out.println("Response POST Status Code =>  " +statusCode);
 
         Assert.assertEquals(200, (int) statusCode);
 
