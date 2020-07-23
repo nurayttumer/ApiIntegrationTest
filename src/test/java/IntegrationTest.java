@@ -56,28 +56,28 @@ public class IntegrationTest {
         RequestSpecification httpRequest = RestAssured.given();
         Response response = httpRequest.request(Method.GET);
 
-        List<String> jsonResponse = response.jsonPath().getList("$");
+        List<String> jsonResponse = response.jsonPath().getList("$");    // GET data
         System.out.println(jsonResponse.get(4));
         fifthElement = jsonResponse.get(4);
-        System.out.println(fifthElement + "is the fifth element");
+        System.out.println(fifthElement + "is the fifth element"); //GET 5.th data
         Integer statusCode=response.getStatusCode();
-        System.out.println("PostClientsWithGetData : Response GET Status Code =>  " +statusCode);
+        System.out.println("PostClientsWithGetData : Response GET Status Code =>  " +statusCode); //GET status code
         Assert.assertEquals(200, (int) statusCode);
 
         try {
             response = RestAssured.given()
                     .contentType(ContentType.JSON)
                     .body(requestBody)
-                    .post(fifthElement);
+                    .post(fifthElement);                              //POST data send 5.th element in Post request
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         String postClientsWithGetDataResponseBody = response.getBody().asString();
-        System.out.println("PostClientsWithGetData : Response POST Body is =>  " + postClientsWithGetDataResponseBody);
+        System.out.println("PostClientsWithGetData : Response POST Body is =>  " + postClientsWithGetDataResponseBody);        //POST data 5th element response body
 
         Integer postClientsWithGetDatastatusCode=response.getStatusCode();
-        System.out.println("PostClientsWithGetData : Response POST Status Code =>  " + postClientsWithGetDatastatusCode);
+        System.out.println("PostClientsWithGetData : Response POST Status Code =>  " + postClientsWithGetDatastatusCode);     //POST data 5th element status code
         Assert.assertEquals(200, (int) statusCode);
 
 
